@@ -1,13 +1,18 @@
 ﻿// site.js
 (function startup() {
-    var ele = document.getElementById("username")
-    ele.innerHTML = "Fernando Levi Marquardt"
+    var ele = $("#username")
+    ele.text("Fernando Levi Marquardt")
 
-    var main = document.getElementById("main")
-    main.onmouseenter = function () {
+    var main = $("#main")
+    main.on("mouseenter", function () {
         main.style.backgroundColor = "#888"
-    }
-    main.onmouseleave = function () {
+    })
+    main.on("mouseleave", function () {
         main.style.backgroundColor = ""
-    }
+    })
+
+    var menuitems = $("ul.menu li a")
+    menuitems.on("click", function () {
+        alert("Hello")
+    })
 })()
